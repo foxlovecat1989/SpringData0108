@@ -26,7 +26,7 @@
                     <td valign="top">
                         <!-- 商品表單 -->
                         <form:form class="pure-form" 
-                                                        acceptCharset=""modelAttribute="product" 
+                                                        modelAttribute="product" 
                                                         method="post" 
                                                         action="${pageContext.request.contextPath}/mvc/psi/product/" >
                             <fieldset>

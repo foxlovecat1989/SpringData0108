@@ -9,8 +9,8 @@
             30
         </session-timeout>
     </session-config>
-    <servlet>
-        <sevlet-name>springMVC</sevlet-name>
+       <servlet>
+        <servlet-name>springMVC</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>  
             <param-name>contextConfigLocation</param-name>  
@@ -18,7 +18,7 @@
         </init-param> 
     </servlet>
     <servlet-mapping>
-        <sevlet-name>springMVC</sevlet-name>
+        <servlet-name>springMVC</servlet-name>
         <url-pattern>/mvc/*</url-pattern>
     </servlet-mapping>
     
@@ -49,5 +49,5 @@
         <filter-name>HiddenHttpMethodFilter</filter-name>
         <url-pattern>/mvc/*</url-pattern>
     </filter-mapping>
-    
+
 </web-app>
