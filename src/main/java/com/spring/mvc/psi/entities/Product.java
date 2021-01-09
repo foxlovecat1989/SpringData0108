@@ -13,52 +13,23 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "T_PRODUCT")
 public class Product {
+    @Id
+    @GeneratedValue
+    private Integer id;
     
-   @Id    
-   @GeneratedValue
-   private Integer id;
+    @Column(name = "name", nullable = false, length = 50)
+    private String name;
     
-   @Column(name = "name", nullable = false, length = 50)
-   private String name;
-   
-   @Column(name = "image", columnDefinition = "clob") // clob 大字串, blob 大二進位
-   @Lob
-   private String image; // base64 String for image
-   
+    @Column(name = "image", columnDefinition = "clob") // clob 大字串, blob 大二進位
+    @Lob
+    private String image; // base64 String for image
+    
     @OneToMany(mappedBy = "product")
     private List<Purchase> purchases = new ArrayList<>();
     
     @OneToMany(mappedBy = "product")
     private List<Sales> saleses = new ArrayList<>();
-
-        public List<Purchase> getPurchases() {
-        return purchases;
-    }
-
-    public Product() {
-    }
-
-    public Product(String name) {
-        this.name = name;
-    }
     
-    public Product(String name, String image) {
-        this.name = name;
-        this.image = image;
-    }
-    
-    public void setPurchases(List<Purchase> purchases) {
-        this.purchases = purchases;
-    }
-
-    public List<Sales> getSaleses() {
-        return saleses;
-    }
-
-    public void setSaleses(List<Sales> saleses) {
-        this.saleses = saleses;
-    }
-
     public Integer getId() {
         return id;
     }
@@ -83,6 +54,21 @@ public class Product {
         this.image = image;
     }
 
+    public List<Purchase> getPurchases() {
+        return purchases;
+    }
+
+    public void setPurchases(List<Purchase> purchases) {
+        this.purchases = purchases;
+    }
+
+    public List<Sales> getSaleses() {
+        return saleses;
+    }
+
+    public void setSaleses(List<Sales> saleses) {
+        this.saleses = saleses;
+    }
     
     
 }
