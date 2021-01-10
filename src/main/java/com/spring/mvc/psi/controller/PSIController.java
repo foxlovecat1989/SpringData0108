@@ -64,7 +64,12 @@ public class PSIController {
     // 刪除商品
     @DeleteMapping(value = {"/product"})
     public String deleteProduct(@ModelAttribute("product") Product product) {
-        productRepository.delete(product.getId());
+        try{
+            productRepository.delete(product.getId());
+        }catch(Exception e){
+            return "redirect: ../psi/product?deleteError=true";
+        }
+        
         return "redirect: ../psi/product";
     }
     
