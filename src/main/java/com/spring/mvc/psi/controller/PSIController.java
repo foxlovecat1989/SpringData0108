@@ -9,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -30,8 +32,17 @@ public class PSIController {
    // 新增商品
     @PostMapping(value = {"/product"})
     public String createProduct(@ModelAttribute("product") Product product) {
-        System.out.println("Image"+product.getImage());
         productRepository.saveAndFlush(product);
         return "redirect: ../psi/product";
     }
+    
+    // 修改商品
+    @PutMapping(value = {"/product"})
+    public String updateProduct(@ModelAttribute("product") Product product) {
+        productRepository.saveAndFlush(product);
+        return "redirect: ../psi/product";
+    }
+    
+    
+    
 }
