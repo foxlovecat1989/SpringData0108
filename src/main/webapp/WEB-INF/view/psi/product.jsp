@@ -41,7 +41,8 @@
                     <h2>商品</h2>
                 </div>
                 <table class="pure-table" style="border: none;">
-                    <td valign="top">
+                    
+                    <td valign="top"><!-- 外框 - 直 -->
                       <!-- 商品表單 -->
                         <form:form class="pure-form" 
                                                     modelAttribute="product" 
@@ -59,17 +60,38 @@
                                 <button type="submit" class="pure-button pure-button-primary">Submit</button>
                             </fieldset>
                         </form:form>
-    
-                    </td>
-                    <td valign="top">
+                    </td><!-- 外框 - 直 -->
+                    
+                    <td valign="top"><!-- 外框 - 直 -->
                         <!-- 商品列表 -->
                         <form class="pure-form">
-                            <fieldset>
-                                <legend>商品列表</legend>
-                                
-                            </fieldset>
+                        <fieldset>
+                        <legend>商品列表</legend>
+                            <table class="pure-table pure-table-bordered">
+                                <thead>
+                                    <tr>
+                                        <td>ID</td>
+                                        <td>Name</td>
+                                        <td>Image</td>
+                                        <td>Update</td>
+                                        <td>Delete</td>
+                                    </tr>
+                                </thead> 
+                                <tbody>
+                                    <c:forEach var="product" items="${ products }" >
+                                    <tr>
+                                        <td>${ product.id }</td> 
+                                        <td>${ product.name }</td> 
+                                        <td><img src="${ product.image }" width="100%" /></td> 
+                                        <td> </td>
+                                        <td> </td>
+                                    </tr>
+                                    </c:forEach>
+                                </tbody>
+                            </table>
+                        </fieldset>
                         </form>
-                    </td>
+                    </td><!-- 外框 - 直 -->
                 </table>   
 
 

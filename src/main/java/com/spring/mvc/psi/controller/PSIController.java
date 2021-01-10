@@ -23,6 +23,7 @@ public class PSIController {
     public String readProduct(Model model){
         Product product = new Product();
         model.addAttribute("product", product);
+        model.addAttribute("products", productRepository.findAll());
         return "psi/product";
     }
     
