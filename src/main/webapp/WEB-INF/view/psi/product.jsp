@@ -53,10 +53,10 @@
                                 <form:input path="id" readonly="true" /><p />
                                 商品名稱 : <br />
                                 <form:input path="name" placeholder="請輸入商品名稱" /><p />
-                                商品圖片 : <br >
+                                商品圖片 : <br />
                                 <input type="file" name="myfile" id="myfile" /><p />
-                               <form:input path="image" readonly="true" /><p />           <!-- 上傳圖片預覽位置 -->
-                                <img id="previewImg" src="${ product.image }"/><p />    <!-- 原本圖片預覽位置 -->
+                                <form:input path="image" readonly="true" /><p />     <!-- 上傳圖片預覽位置 -->
+                                <img id="previewImage" src="${product.image==null?space:product.image}" width="${product.image==null?0:50}" /><p />    <!-- 原本圖片預覽位置 -->
                                 <button type="submit" class="pure-button pure-button-primary">Submit</button>
                             </fieldset>
                         </form:form>
@@ -82,7 +82,7 @@
                                     <tr>
                                         <td>${ product.id }</td> 
                                         <td>${ product.name }</td> 
-                                        <td><img src="${ product.image }" width="100%" /></td> 
+                                        <td><img src="${ product.image==null || product.image==""? space:product.image }" width="${ product.image==null || product.image==""? 0:50 }" /></td> 
                                         <td> </td>
                                         <td> </td>
                                     </tr>

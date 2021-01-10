@@ -30,6 +30,7 @@ public class PSIController {
    // 新增商品
     @PostMapping(value = {"/product"})
     public String createProduct(@ModelAttribute("product") Product product) {
+        System.out.println("Image"+product.getImage());
         productRepository.saveAndFlush(product);
         return "redirect: ../psi/product";
     }
