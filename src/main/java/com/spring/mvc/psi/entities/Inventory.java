@@ -1,15 +1,15 @@
 package com.spring.mvc.psi.entities;
 
 import com.google.errorprone.annotations.Immutable;
-import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 @Entity
 @Immutable
-@Table(name = "INVENTORY")
+@Table(name = "T_INVENTORY")
 public class Inventory {
     
     @Id
@@ -17,6 +17,10 @@ public class Inventory {
     
     @Column
     private String name;
+    
+    @Column(name = "image", columnDefinition = "clob") // clob 大字串, blob 大二進位
+    @Lob
+    private String image; // base64 String for image
     
     @Column(name = "PU_QUANTITY")
     private Integer pu_quantity;
@@ -78,9 +82,12 @@ public class Inventory {
         this.sa_amount = sa_amount;
     }
 
-    @Override
-    public String toString() {
-        return "Inventory{" + "id=" + id + ", name=" + name + ", pu_quantity=" + pu_quantity + ", pu_amount=" + pu_amount + ", sa_quantity=" + sa_quantity + ", sa_amount=" + sa_amount + '}';
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
     
     

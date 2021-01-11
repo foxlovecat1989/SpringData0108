@@ -4,10 +4,11 @@ import com.google.errorprone.annotations.Immutable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Inventory2")
+@Table(name = "T_INVENTORY2")
 @Immutable
 public class Inventory2 {
     
@@ -16,6 +17,10 @@ public class Inventory2 {
     
     @Column
     private String name;
+    
+    @Column(name = "image", columnDefinition = "clob") // clob 大字串, blob 大二進位
+    @Lob
+    private String image; // base64 String for image
     
     @Column(name = "REMAIN_QUANTITY")
     private Integer remainQuantity;
@@ -77,9 +82,12 @@ public class Inventory2 {
         this.price2 = price2;
     }
 
-    @Override
-    public String toString() {
-        return "Inventory2{" + "id=" + id + ", name=" + name + ", remainQuantity=" + remainQuantity + ", cost=" + cost + ", price1=" + price1 + ", price2=" + price2 + '}';
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
     
 }
