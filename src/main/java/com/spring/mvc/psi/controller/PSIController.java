@@ -2,7 +2,11 @@ package com.spring.mvc.psi.controller;
 
 import java.util.Optional;
 import com.spring.mvc.psi.entities.Product;
+import com.spring.mvc.psi.repository.Inventory2Repository;
+import com.spring.mvc.psi.repository.InventoryRepository;
 import com.spring.mvc.psi.repository.ProductRepository;
+import com.spring.mvc.psi.repository.PurchaseRepository;
+import com.spring.mvc.psi.repository.SalesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,6 +25,18 @@ public class PSIController {
     
     @Autowired
     ProductRepository productRepository;
+    
+    @Autowired
+    InventoryRepository inventoryRepository;
+   
+    @Autowired
+    Inventory2Repository inventory2Repository;
+    
+    @Autowired
+    PurchaseRepository purchaseRepository;
+    
+    @Autowired
+    SalesRepository salesRepository;
     
     // 讀取商品資料
     @GetMapping(value = {"/product", "/product/{id}", "/product/{delete}/{id}"})
@@ -73,4 +89,27 @@ public class PSIController {
         return "redirect: ../psi/product";
     }
     
+    // 讀取庫存
+    @GetMapping(value = {"/inventory"})
+    public String readInventory(Model model) {
+        model.addAttribute("inventories", inventoryRepository.findAll());
+        model.addAttribute("inventories2", inventory2Repository.findAll());
+        return "psi/inventory";
+    }   
+    
+    // 讀取進貨
+    @GetMapping(value = {"/purchase"})
+    public String readPurchase(Model model) {
+        model.addAttribute("purchases", purchaseRepository.findAll());
+        model.addAttribute("inventories2", inventory2Repository.findAll());
+        return "psi/purchase";
+    } 
+    
+    // 讀取銷貨
+    @GetMapping(value = {"/sales"})
+    public String readSales(Model model) {
+        model.addAttribute("sales", salesRepository.findAll());
+        model.addAttribute("inventories2", inventory2Repository.findAll());
+        return "psi/sales";
+    } 
 }

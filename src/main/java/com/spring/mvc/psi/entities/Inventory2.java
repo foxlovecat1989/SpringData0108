@@ -8,7 +8,7 @@ import javax.persistence.Lob;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "T_INVENTORY2")
+@Table(name = "T_INVENTORY_2")
 @Immutable
 public class Inventory2 {
     
@@ -25,14 +25,17 @@ public class Inventory2 {
     @Column(name = "REMAIN_QUANTITY")
     private Integer remainQuantity;
     
-    @Column(name = "COST")
-    private Integer cost;
+    @Column(name = "AVERAGE_OF_COST")
+    private Integer averageOfCost;
     
-    @Column(name = "price1")
-    private Integer price1;
+    @Column(name = "AVERAGE_OF_SALE")
+    private Integer averageOfSale;
     
-    @Column(name = "price2")
-    private Integer price2;
+    @Column(name = "SALE_PRICE1")
+    private Integer salePrice1;
+    
+    @Column(name = "SALE_PRICE2")
+    private Integer salePrice2;
 
     public Integer getId() {
         return id;
@@ -50,6 +53,14 @@ public class Inventory2 {
         this.name = name;
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
     public Integer getRemainQuantity() {
         return remainQuantity;
     }
@@ -58,36 +69,37 @@ public class Inventory2 {
         this.remainQuantity = remainQuantity;
     }
 
-    public Integer getCost() {
-        return cost;
+    public Integer getAverageOfCost() {
+        return averageOfCost;
     }
 
-    public void setCost(Integer cost) {
-        this.cost = cost;
+    public void setAverageOfCost(Integer averageOfCost) {
+        this.averageOfCost = averageOfCost;
     }
 
-    public Integer getPrice1() {
-        return price1;
+    public Integer getAverageOfSale() {
+        return averageOfSale;
     }
 
-    public void setPrice1(Integer price1) {
-        this.price1 = price1;
+    public void setAverageOfSale(Integer averageOfSale) {
+        this.averageOfSale = averageOfSale;
     }
 
-    public Integer getPrice2() {
-        return price2;
+    public Integer getSalePrice1() {
+        return salePrice1;
     }
 
-    public void setPrice2(Integer price2) {
-        this.price2 = price2;
+    public void setSalePrice1(Integer salePrice1) {
+        this.salePrice1 = salePrice1;
     }
 
-    public String getImage() {
-        return image;
+    public Integer getSalePrice2() {
+        return salePrice2;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setSalePrice2(Integer salePrice2) {
+        this.salePrice2 = salePrice2;
     }
+    
     
 }
