@@ -90,16 +90,16 @@
                                                     <fmt:formatNumber type="number" pattern="###,###" value="${ i.remainQuantity }" />
                                                 </td>
                                                 <td>
-                                                    <fmt:formatNumber type="number" pattern="###,###.0" value="${ i.cost }" />
+                                                    <fmt:formatNumber type="number" pattern="###,###.0" value="${ i.averageOfCost }" />
                                                 </td>
                                                 <td>
-                                                    <fmt:formatNumber type="number" pattern="###,###.0" value="${ i.cost }" />
+                                                    <fmt:formatNumber type="number" pattern="###,###.0" value="${ i.averageOfSale }" />
                                                 </td>
                                                 <td>
-                                                    <fmt:formatNumber type="number" pattern="###,###.0" value="${ i.price1 }" />
+                                                    <fmt:formatNumber type="number" pattern="###,###.0" value="${ i.salePrice1 }" />
                                                 </td>
                                                 <td>
-                                                    <fmt:formatNumber type="number" pattern="###,###.0" value="${ i.price2 }" />
+                                                    <fmt:formatNumber type="number" pattern="###,###.0" value="${ i.salePrice2 }" />
                                                 </td>
                                             </tr>
                                         </c:forEach>

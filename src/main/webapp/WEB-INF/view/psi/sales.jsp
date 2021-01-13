@@ -52,19 +52,19 @@
                                                 <td>${ i.name }</td>
                                                 <td><img style="cursor: zoom-in" id="blah" src="${ i.image==null?space:i.image }" width="${ i.image==null?'0':'100' }" /></td>
                                                 <td>
-                                                    <fmt:formatNumber type="number" pattern="###,###" value="${ i.qty }" />
+                                                    <fmt:formatNumber type="number" pattern="###,###" value="${ i.remainQuantity }" />
                                                 </td>
                                                 <td>
-                                                    <fmt:formatNumber type="number" pattern="###,###.0" value="${ i.puCost }" />
+                                                    <fmt:formatNumber type="number" pattern="###,###.0" value="${ i.averageOfCost }" />
                                                 </td>
                                                 <td>
-                                                    <fmt:formatNumber type="number" pattern="###,###.0" value="${ i.saCost }" />
+                                                    <fmt:formatNumber type="number" pattern="###,###.0" value="${ i.averageOfSale }" />
                                                 </td>
                                                 <td>
-                                                    <fmt:formatNumber type="number" pattern="###,###.0" value="${ i.price1 }" />
+                                                    <fmt:formatNumber type="number" pattern="###,###.0" value="${ i.salePrice1 }" />
                                                 </td>
                                                 <td>
-                                                    <fmt:formatNumber type="number" pattern="###,###.0" value="${ i.price2 }" />
+                                                    <fmt:formatNumber type="number" pattern="###,###.0" value="${ i.salePrice2 }" />
                                                 </td>
                                                 <td><input type="number" name="quantity" value="0" style="max-width: 100px" /></td>
                                                 <td><input type="number" name="price" value="0" style="max-width: 100px" /></td>
